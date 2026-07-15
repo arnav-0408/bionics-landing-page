@@ -179,18 +179,6 @@ def parse_markdown_to_pdf(md_path, pdf_path):
     # In case document ended on table
     if in_table and table_rows:
         render_pdf_table(pdf, table_rows)
-        
-    # Append the Drive deliverable link statement
-    pdf.ln(10)
-    pdf.set_font('Helvetica', 'B', 12)
-    pdf.set_text_color(217, 70, 239)
-    pdf.cell(0, 10, 'Google Drive Submission Links:', 0, 0)
-    pdf.ln(10)
-    pdf.set_font('Helvetica', '', 10)
-    pdf.set_text_color(40, 50, 60)
-    
-    pdf.multi_cell(0, 5, "Please refer to the candidate's actual Google Drive submission links. The codebase is organized within the local workspace under '/scratch/bionics-landing-page', containing the complete production React + Vite components and custom CSS styling.")
-    pdf.ln(5)
 
     pdf.output(pdf_path)
     print(f"PDF generated successfully at {pdf_path}")
